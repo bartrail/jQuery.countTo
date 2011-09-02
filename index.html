@@ -1,0 +1,52 @@
+<!doctype html public "✰"> 
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" > 
+  
+<title dir="ltr">jQuery.countTo.</title> 
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.countTo.js"></script>  
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#timerDown').countTo({
+      interval: 5,
+      startNumber: 1000,
+      endNumber: -1000,
+      onFinish: function(self, current, loop) {
+        $(self).append(' - finished '+loop+' calls with '+(1000/self.options.interval)+" loops/second")
+      }
+    });
+    $('#timerUp').countTo({
+      interval: 2000,
+      startNumber: 0,
+      endNumber: 100,
+      onLoop: function(self, current, loop) {
+        $(self).text(current + " - current*loop = " +current*loop);
+      }
+    });
+    $('li').countTo({
+      onFinish: function(self, current, loop) {
+        $(self).last().text("last one updated only");
+      }
+    });
+  });
+</script>
+</head> 
+<body> 
+<div id="timerDown"></div>
+<div id="timerUp"></div>
+
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+  
+</body> 
+</html> 
