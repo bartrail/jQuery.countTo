@@ -1,0 +1,37 @@
+/**
+ * countdown timer with some configuration
+ *
+ * @version 0.1
+ * @url http://jsfiddle.net/KzrwQ/1/
+ * @date 2011/09/02
+ * @author Conrad 'bartrail' Barthelmes
+ * @licence MIT
+ *
+ * usage:
+ *
+ * $('selector').countTo({
+ *   interval:    1000,                             // miliseconds the interval is repeated (aka speed)
+ *   startNumber: 10,                               // start from 10 or any other integer
+ *   endNumber:   0,                                // end at 0 or any other integer
+ *   
+ *   onLoop:      function(self, current, loop) {   // fired on every loop
+ *     self;      // the fetched element
+ *     current;   // current number of interval
+ *     loop;      // finished loops
+ *
+ *     // default behaviour:
+ *     $(self).text(current);
+ *   },
+ *   
+ *   onStart:     function(self) {                  // fired on the beginning
+ *     self;      // the fetched element
+ *   },
+ *
+ *   onFinish:    function(self, current, loop) {   // fired when finished
+ *     self;      // the fetched element
+ *     current;   // current number of interval
+ *     loop;      // finished loops
+ *   }
+ * });
+ * 
+ */
